@@ -10,6 +10,8 @@ group :development do
 end
 
 gem 'taps', '0.3.24'
+gem 'jquery_mobile_rails', '1.3.0'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
