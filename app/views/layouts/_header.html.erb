@@ -1,7 +1,14 @@
 <div data-role="header" data-position="fixed">
-	<img border="0" src="/assets/logo4.png" alt="Logo" style="float:left;display:inline;height:48px"/>
-	<span style="float:right;display:block"><a href="/static_pages/home" style="display:block;height:48px"><img border="0" src="/assets/logout1.png" alt="log out"/></a></span>
-	<span style="float:right;display:block"><a href="/static_pages/home" style="display:block;height:48px"><img border="0" src="/assets/user3.png" alt="user"/></a></span>
+	<div class="header-logo">
+		<%= link_to(image_tag("/assets/logo4.png", :alt => "logo",height: '48', width: '100'), root_path) %>
+		<span class="header-text">OLMusic</span>
+	</div>
+	<div class="header-right-1">
+		<%= link_to(image_tag("/assets/logout1.png", :alt => "logout",height: '48', width: '48'), root_path) %>
+	</div>
+	<div class="header-right-2">
+		<%= link_to(image_tag("/assets/user3.png", :alt => "logout",height: '48', width: '48'), "/users/new") %>
+	</div>
 	<div data-role= "navbar">
 		<ul>
 			<li><a href="/static_pages/home" data-icon="home"  >Home</a></li>
