@@ -6,6 +6,7 @@ OnlineMusic::Application.routes.draw do
   # get "static_pages/contact"
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'static_pages#home'
 
