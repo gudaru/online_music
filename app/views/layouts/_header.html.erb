@@ -7,14 +7,14 @@
 		<%= link_to(image_tag("/assets/logout1.png", :alt => "logout",height: '48', width: '48'), root_path) %>
 	</div>
 	<div class="header-right-2">
-		<%= link_to(image_tag("/assets/user3.png", :alt => "logout",height: '48', width: '48'), "/users/new") %>
+		<%= link_to(image_tag("/assets/user3.png", :alt => "logout",height: '48', width: '48'), signup_path) %>
 	</div>
 	<div data-role= "navbar">
 		<ul>
-			<li><a href="/static_pages/home" data-icon="home"  >Home</a></li>
-			<li><a href="/static_pages/about"   data-icon="info"  >About</a></li>
-			<li><a href="/static_pages/contact"   data-icon="search"  >Contact</a></li>
-			<li><a href="/static_pages/help"   data-icon="star"  >Help</a></li>
+			<li><a href="/" data-icon="home"  >Home</a></li>
+			<li><a href="/about"   data-icon="info"  >About</a></li>
+			<li><a href="/contact"   data-icon="search"  >Contact</a></li>
+			<li><a href="/help"   data-icon="star"  >Help</a></li>
 		</ul>	
 	</div><!-- /navbar-->
 	<input type="search" name="password" id="search" value=""/>
