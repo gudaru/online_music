@@ -3,12 +3,25 @@
 		<%= link_to(image_tag("/assets/logo4.png", :alt => "logo",height: '48', width: '100'), root_path) %>
 		<span class="header-text">OLMusic</span>
 	</div>
-	<div class="header-right-1">
-		<%= link_to(image_tag("/assets/logout1.png", :alt => "logout",height: '48', width: '48'), root_path) %>
-	</div>
-	<div class="header-right-2">
-		<%= link_to(image_tag("/assets/user3.png", :alt => "logout",height: '48', width: '48'), signup_path) %>
-	</div>
+
+	<% if signed_in? %>
+	    <div class="header-right-1">
+			<%= link_to(image_tag("/assets/logout1.png", :alt => "sign out",height: '48', width: '48'), signout_path, method: "delete") %>
+		</div>
+	    <div class="header-right-2">
+			<%= link_to(image_tag("/assets/setting.png", :alt => "setting",height: '48', width: '48'), '#') %>
+		</div>
+		<div class="header-right-3">
+			<%= link_to(image_tag("/assets/user3.png", :alt => "profile",height: '48', width: '48'), current_user) %>
+		</div>	          
+	<% else %>
+		<div class="header-right-1">
+			<%= link_to(image_tag("/assets/user3.png", :alt => "sign in",height: '48', width: '48'), signin_path) %>
+		</div> 
+	<% end %>
+
+
+
 	<div data-role= "navbar">
 		<ul>
 			<li><a href="/" data-icon="home"  >Home</a></li>

@@ -1,5 +1,10 @@
 <div data-role="footer" data-position="fixed">
 	<a data-role="button"  data-rel="back" class="ui-btn-left">Back</a>
-	<a href="/sessions/new" data-role="button"   class="ui-btn-right">Sign in</a>
+	<% if signed_in? %>
+		<a href="/sessions/destroy" data-role="button"   class="ui-btn-right">Sign out</a>
+	<%  else %>
+		<a href="/sessions/new" data-role="button"   class="ui-btn-right">Sign in</a>
+	<% end%>
+	
 	<h1 class="header-text">Copyright © 2013 A.N.lab</h1>
 </div><!-- /footer -->

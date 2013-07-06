@@ -5,6 +5,7 @@
 .header-text {color:#5ea4fc;font-size:120%}
 .header-right-1 {position:absolute;display:inline;right:1px;top:1px}
 .header-right-2 {position:absolute;display:inline;right:50px;top:1px}
+.header-right-3 {position:absolute;display:inline;right:99px;top:1px}
 
 /* forms */
 
@@ -20,6 +21,5 @@
   @extend .control-group;
   @extend .error;
 }
-
 
 
