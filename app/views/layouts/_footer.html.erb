@@ -1,7 +1,8 @@
 <div data-role="footer" data-position="fixed">
 	<a data-role="button"  data-rel="back" class="ui-btn-left">Back</a>
 	<% if signed_in? %>
-		<a href="/sessions/destroy" data-role="button"   class="ui-btn-right">Sign out</a>
+		<%=link_to "Sign out", signout_path, "data-role"=>"button", "class"=>"ui-btn-right",method: "delete"%>
+		<!-- <a href="/signout" data-role="button"   class="ui-btn-right">Sign out</a> -->
 	<%  else %>
 		<a href="/sessions/new" data-role="button"   class="ui-btn-right">Sign in</a>
 	<% end%>
