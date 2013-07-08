@@ -1,0 +1,13 @@
+<% provide(:title, @music.name) %>
+<h1>
+	<%= image_tag("/assets/Music_32.png", size: "32")%>
+	<span class="header-text"><%= @music.name %></span>
+	<div>
+		<audio controls loop autoplay preload="metadata" >
+			<source src=<%=@music.m_src%> type="audio/mpeg"></source>
+		</audio>
+	</div>
+	<%= image_tag("/assets/Like-32.png", size: "32")%>500
+	<%= link_to(image_tag("/assets/download.png", :alt => "dowload",size:"32"), @music.m_src, target: "blank") %>300
+	<%= link_to(image_tag("/assets/user.png", :alt => "artist",size:"32"), "#", target: "blank") %> Miu Le
+</h1> 

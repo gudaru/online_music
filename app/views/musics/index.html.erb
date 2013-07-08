@@ -1,0 +1,12 @@
+<% provide(:title, 'Home') %>
+
+
+
+  <% @musics.each do |music| %>
+  	<div>
+  		<%= image_tag("/assets/music-32.png", size: "32")%>
+      	<%= link_to music.name, music %>
+  	</div>
+  <% end %>
+
+ 

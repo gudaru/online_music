@@ -1,4 +1,12 @@
 OnlineMusic::Application.routes.draw do
+  get "musics/new"
+
+  get "musics/show"
+
+  get "musics/index"
+
+  get "music/new"
+
   # get "users/new"
   # get "static_pages/home"
   # get "static_pages/help"
@@ -7,8 +15,10 @@ OnlineMusic::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :musics
 
-  root to: 'static_pages#home'
+  # root to: 'static_pages#home'
+  root to: 'musics#index'
 
   # match '/', to: 'static_pages#home'
   match '/help',    to: 'static_pages#help'
@@ -19,7 +29,9 @@ OnlineMusic::Application.routes.draw do
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
-
+  match '/upload', to: 'musics#new'
+  match '/play', to: 'musics#show'
+  # match '/mview', to: 'musics#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

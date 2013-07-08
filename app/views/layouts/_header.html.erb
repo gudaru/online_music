@@ -9,7 +9,7 @@
 			<%= link_to(image_tag("/assets/logout1.png", :alt => "sign out",height: '48', width: '48'), signout_path, method: "delete") %>
 		</div>
 	    <div class="header-right-2">
-			<%= link_to(image_tag("/assets/setting.png", :alt => "setting",height: '48', width: '48'), '#') %>
+			<%= link_to(image_tag("/assets/setting.png", :alt => "setting",height: '48', width: '48'), edit_user_path(current_user)) %>
 		</div>
 		<div class="header-right-3">
 			<%= link_to(image_tag("/assets/user3.png", :alt => "profile",height: '48', width: '48'), current_user) %>
