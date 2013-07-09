@@ -1,11 +1,11 @@
 OnlineMusic::Application.routes.draw do
-  get "musics/new"
+  # get "musics/new"
 
-  get "musics/show"
+  # get "musics/show"
 
-  get "musics/index"
+  # get "musics/index"
 
-  get "music/new"
+  # get "music/new"
 
   # get "users/new"
   # get "static_pages/home"
@@ -31,6 +31,8 @@ OnlineMusic::Application.routes.draw do
 
   match '/upload', to: 'musics#new'
   match '/play', to: 'musics#show'
+  match '/mnew', to: 'musics#n_index'
+  match '/mtop', to: 'musics#t_index'
   # match '/mview', to: 'musics#index'
 
   # The priority is based upon order of creation:

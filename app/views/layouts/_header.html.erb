@@ -1,7 +1,7 @@
 <div data-role="header" data-position="fixed">
 	<div class="header-logo">
 		<%= link_to(image_tag("/assets/logo4.png", :alt => "logo",height: '48', width: '100'), root_path) %>
-		<span class="header-text">OLMusic</span>
+		<span class="header-text">Muzik</span>
 	</div>
 
 	<% if signed_in? %>
@@ -20,14 +20,12 @@
 		</div> 
 	<% end %>
 
-
-
 	<div data-role= "navbar">
 		<ul>
 			<li><a href="/" data-icon="home"  >Home</a></li>
-			<li><a href="/about"   data-icon="info"  >About</a></li>
-			<li><a href="/contact"   data-icon="search"  >Contact</a></li>
-			<li><a href="/help"   data-icon="star"  >Help</a></li>
+			<li><a href=<%=mnew_path%>   data-icon="info"  >New songs</a></li>
+			<li><a href="/mtop"   data-icon="search"  >Top songs</a></li>
+			<li><a href="/help"   data-icon="star"  >Artist</a></li>
 		</ul>	
 	</div><!-- /navbar-->
 	<input type="search" name="password" id="search" value=""/>

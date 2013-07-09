@@ -1,0 +1,11 @@
+<% provide(:title, 'Top songs') %>
+<div class="title-main">Top songs</div>
+  <% @musics.each do |music| %>
+  	<div class="row-song">
+  		<%= image_tag("/assets/music-32.png", height: "16", width: "16")%>
+      	<%= link_to music.name, music %>
+  	</div>
+  <% end %>
+<div class="mpaging">
+	<%=will_paginate @musics, :param_name => 't_page',:inner_window => 0,:outer_window => 0, style: "font-size:70%;padding:0px"%>
+</div>

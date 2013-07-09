@@ -1,11 +1,22 @@
 <div data-role="footer" data-position="fixed">
+	
+	<!-- back button -->
 	<a data-role="button"  data-rel="back" class="ui-btn-left">Back</a>
+	
+	<!-- sign in/ sign out button -->
 	<% if signed_in? %>
 		<%=link_to "Sign out", signout_path, "data-role"=>"button", "class"=>"ui-btn-right",method: "delete"%>
-		<!-- <a href="/signout" data-role="button"   class="ui-btn-right">Sign out</a> -->
 	<%  else %>
 		<a href="/sessions/new" data-role="button"   class="ui-btn-right">Sign in</a>
 	<% end%>
 	
-	<h1 class="header-text">Copyright © 2013 A.N.lab</h1>
+	<!-- nav and info -->
+	<div class="footer-text">
+		<div class="footer-nav">
+			<%=link_to "About", about_path, :style => ";font-weight:lighter;color:#ffffff"%>
+			|<%=link_to " Contact", contact_path, :style => ";font-weight:lighter;color:#ffffff"%>
+			|<%=link_to " Help", help_path, :style => ";font-weight:lighter;color:#ffffff"%>
+		</div>
+		<p>Copyright © 2013 A.N.lab</p>
+	</div>
 </div><!-- /footer -->

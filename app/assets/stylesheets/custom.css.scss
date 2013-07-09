@@ -1,16 +1,37 @@
+
+a, u {
+    text-decoration: none;
+}
+
 /*.header
 .header span{float:right;display:block;}
 .header span a{display:block;height:48px;}*/
+
+//logo
 .header-logo {position:relative;display:inline;left:1px;top:1px}
 .header-text {color:#5ea4fc;font-size:120%}
+
+//footer
+.footer-text {color:#5ea4fc;font-size:12px;font-weight:lighter;margin-bottom:-12px;margin-top:5px;text-align:center;
+.footer-nav {font-size:14px;margin-bottom:-5px;font-weight:lighter;color:#ffffff}}
+
+//right-top button
 .header-right-1 {position:absolute;display:inline;right:1px;top:1px}
 .header-right-2 {position:absolute;display:inline;right:50px;top:1px}
 .header-right-3 {position:absolute;display:inline;right:99px;top:1px}
 
-/* forms */
+//paginate theme bootstrap
+.mpaging {@import "bootstrap"}
+
+//title main content
+.title-main{padding:6px 5px 4px 6px;border-bottom:2px solid #5cafd5;font-weight:bold;font-size:16px;color:#636363;}
+
+//song
+.row-song {padding:6px 5px 4px 6px;border-bottom:1px solid #888888;font-weight:lighter;font-size:14px;color:#5ea4fc;}
+
 
 #error_explanation {
-  color: #f00;
+  color: #ff0000;
   ul {
     list-style: none;
     margin: 0 0 18px 0;
@@ -21,5 +42,9 @@
   @extend .control-group;
   @extend .error;
 }
+
+
+
+
 
 

@@ -3,3 +3,8 @@
 
 en:
   hello: "Hello world"
+  will_paginate:
+    previous_label: "<"
+    next_label: ">"
+    # inner_window: "4"
+    # outer_window: "2"
