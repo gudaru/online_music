@@ -14,7 +14,7 @@ class MusicsController < ApplicationController
   end
 
   def n_index
-    @musicsn = Music.paginate(:page => params[:n_page], per_page: 10, :order => 'created_at DESC')
+    @musicsn = Music.paginate(:page => params[:n_page], per_page: 10, :order => 'name')
   end
 
   def t_index
