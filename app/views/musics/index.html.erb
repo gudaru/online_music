@@ -1,23 +1,48 @@
 <% provide(:title, 'Home') %>
+
+<!-- top song -->
 <div class="title-main">Top songs</div>
   <% @musics.each do |music| %>
-  	<div class="row-song">
+  	<!-- name anchor song -->
+    <div class="row-song">
   		<%= image_tag("/assets/music-32.png", height: "16", width: "16")%>
       	<%= link_to music.name, music %>
   	</div>
+    <!-- artist like -->
+    <div class="row-info">
+      <%= image_tag("/assets/singer.png", height: "16", width: "16")%>
+      <!-- artist name -->
+      <%music.makes.each do |make|%>
+        <%= Artist.find(make.artist_id).name%>,
+      <% end%>
+      <!-- like -->
+      <span><%= image_tag("/assets/Like-32.png", height: "16", width: "16")%>168</span>
+    </div>
   <% end %>
 <div class="mpaging">
 	<%=will_paginate @musics, :param_name => 't_page',:inner_window => 0,:outer_window => 0, style: "font-size:70%;padding:0px"%>
 </div>
 
+<!-- new song -->
 <div class="title-main">New songs</div>
   <% @musicsn.each do |musicn| %>
+    <!-- name song -->
   	<div class="row-song">
   		<%= image_tag("/assets/music-32.png", height: "16", width: "16")%>
       	<%= link_to musicn.name, musicn %>
   	</div>
+    <!-- artist like -->
+    <div class="row-info">
+      <%= image_tag("/assets/singer.png", height: "16", width: "16")%>
+      <!-- artist name -->
+      <%musicn.makes.each do |make|%>
+        <%= Artist.find(make.artist_id).name%>,
+      <% end%>
+      <!-- like -->
+      <span><%= image_tag("/assets/Like-32.png", height: "16", width: "16")%>168</span>
+    </div>
   <% end %>
 <div class="mpaging">
 	<%=will_paginate @musicsn, :param_name => 'n_page',:inner_window => 0,:outer_window => 0, style: "font-size:70%;padding:0px"%>
 </div>
- 
+

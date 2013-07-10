@@ -1,0 +1,23 @@
+<% provide(:title, @artist.name) %>
+<h1>
+	<%= image_tag("/assets/artava.png", height: "100", width: "100")%>
+	<%=@artist.name%>
+</h1>
+<p><%=@artist.info%></p>
+
+<div class="title-main">Songs:</div>
+  <% @artist.makes.each do |make| %>
+  	<div class="row-song">
+  		<%= image_tag("/assets/music-32.png", height: "16", width: "16")%>
+      	<%= link_to Music.find(make.music_id).name, Music.find(make.music_id) %>
+  	</div>
+  	<div class="row-info">
+  		<%= image_tag("/assets/singer.png", height: "16", width: "16")%>
+
+  		<%Music.find(make.music_id).makes.each do |make1|%>
+          <%= Artist.find(make1.artist_id).name%>,
+        <% end%>
+
+  		<span><%= image_tag("/assets/Like-32.png", height: "16", width: "16")%>168</span>
+  	</div>
+  <% end %>

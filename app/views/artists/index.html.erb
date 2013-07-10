@@ -1,0 +1,18 @@
+<% provide(:title, 'Artist') %>
+
+<!-- all artists -->
+<div class="title-main">Artist</div>
+  <% @artists.each do |artist| %>
+  	<!-- link to an artist -->
+    <div class="row-song">
+  		<%= image_tag("/assets/user.png", height: "16", width: "16")%>
+      <%= link_to artist.name, artist %>
+  	</div>
+    <!-- artist like -->
+    <div class="row-info">
+    </div>
+
+  <% end %>
+<div class="mpaging">
+	<%=will_paginate @artists, :param_name => 'a_page',:inner_window => 0,:outer_window => 0, style: "font-size:70%;padding:0px"%>
+</div>
