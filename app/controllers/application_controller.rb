@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_filter :s_index
   protect_from_forgery
   include SessionsHelper
   
@@ -6,5 +7,10 @@ class ApplicationController < ActionController::Base
   def handle_unverified_request
     sign_out
     super
+  end
+
+  def s_index
+    @songs = Music.find(:all, order: "name")
+    @artists = Artist.find(:all, order: "name")
   end
 end

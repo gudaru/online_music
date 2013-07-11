@@ -20,5 +20,4 @@ class MusicsController < ApplicationController
   def t_index
     @musics = Music.paginate(:page => params[:t_page], per_page: 10)
   end
-
 end
