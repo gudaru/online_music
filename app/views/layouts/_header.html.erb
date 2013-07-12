@@ -16,7 +16,7 @@
 		</div>	          
 	<% else %>
 		<div class="header-right-1">
-			<%= link_to(image_tag("/assets/user3.png", :alt => "sign in",height: '48', width: '48'), signin_path) %>
+			<%= link_to(image_tag("/assets/user3.png", :alt => "sign in",height: '48', width: '48'), signup_path) %>
 		</div> 
 	<% end %>
 
@@ -31,7 +31,7 @@
 	<p></p>
 
 	<!-- search song & artist -->
-	<ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search here ..." data-count-theme="a" data-filter-theme="a" style="margin:15px" class="">
+	<ul id="autocomplete" data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search here ..." data-count-theme="a" data-filter-theme="a" style="margin:15px" class="">
 		<li data-role="list-divider"><a href=<%=root_path%>>Songs</a></li>
 		<% @songs.each do |song|%>
 			<li>

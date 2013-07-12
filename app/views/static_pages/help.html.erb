@@ -1,3 +1,6 @@
 <% provide(:title, 'Help') %>
-<h1>StaticPages#help</h1>
-<p>Find me in app/views/static_pages/help.html.erb</p>
+<h1>Help</h1>
+<p>Sign in to comment and like favourite songs.</p>
+<p>Click <a href=<%=signin_path%> data-role="button" data-theme="a" data-inline="true">Sign in</a> to sign in if you have an account.</p>
+<p>Click <%= link_to(image_tag("/assets/user3.png", :alt => "sign in",height: '48', width: '48'), signup_path) %> to sign up.</p>
+
