@@ -31,18 +31,23 @@
 	<p></p>
 
 	<!-- search song & artist -->
-	<ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search here ..." data-theme="c" style="margin:15px">
-
+	<ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search here ..." data-count-theme="a" data-filter-theme="a" style="margin:15px" class="">
+		<li data-role="list-divider"><a href=<%=root_path%>>Songs</a></li>
 		<% @songs.each do |song|%>
 			<li>
-				<%= image_tag("/assets/music-32.png", height: "16", width: "16")%>
-				<%= link_to song.name, song %>
+				<span>
+				<%= image_tag("/assets/song.png", height: "16", width: "16")%>
+				</span>
+				<span>
+					<%= link_to song.name, song %>
+				</span>
 			</li>
 		<%end%>
+		<li data-role="list-divider"><a href=<%=singer_path%>>Artists</a></li>
 		<% @artists.each do |artist|%>
 			<li>
-				<%= image_tag("/assets/singer.png", height: "16", width: "16")%>
-				<%= link_to artist.name, artist %>
+				<span><%= image_tag("/assets/user2.png", height: "16", width: "16")%></span>
+				<span><%= link_to artist.name, artist %></span>
 			</li>
 		<%end%>
 	</ul>
