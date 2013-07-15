@@ -1,23 +1,85 @@
 <% provide(:title, @music.name) %>
 	
-<div class="row-songplay" >
-	<%= image_tag("/assets/listen.png", height: "32", width: "32")%>
-	<%= @music.name%>
-</div>
+<!-- player interface -->
+
+<div class="player-song">
+
+	<!-- info -->
+
+	<div class="row-songplay" >
+		<%= image_tag("/assets/listen.png", height: "32", width: "32")%>
+		<%= @music.name%>
+	</div>
 	
 	
-	<div class="row-infoplay">
-		<%= link_to(image_tag("/assets/singer.png", :alt => "artist", height: "24", width: "24"), "#", target: "blank") %> Micheal
-			
+	<div class="row-infoplay1">
+		<%= link_to(image_tag("/assets/singer.png", :alt => "artist", height: "24", width: "24"), "#", target: "blank") %>
+		 
+		<%@music.makes.each do |make|%>
+	        <%=link_to Artist.find(make.artist_id).name,Artist.find(make.artist_id)%>,
+	    <% end%>
+	    	
 		<%= image_tag("/assets/Like-32.png", height: "24", width: "24")%> 500
 	</div>
-	<br>
-	<div>
-		<audio controls loop autoplay preload="metadata" >
-			<source src=<%=@music.m_src%> type="audio/mpeg"></source>
-		</audio>
-		<div class="row-infoplay">
-			Download
-			<%= link_to(image_tag("/assets/download5.png", :alt => "download", height: "20", width: "24"), @music.m_src, target: "blank") %>
-		</div>
-	</div>
+    
+	<!-- player -->
+
+    <div class="player">
+        <div class="hide-html5">
+            <audio id="audio" controls="controls">
+                <source src= <%=@music.m_src%> type="audio/mpeg" />
+            </audio>
+        </div> 
+        <div id="play" class="play control">
+        </div> 
+        <div id="progress">
+            <div id="progress_box">
+                <div id="load_progress" style="width:0px;">
+                    <div class="hand-control" id="hand_progress" style="left:-7px;">
+                    </div>
+                    <div id="play_progress" style="width:0px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="play_time"> 
+            <span id="current_time_display">00:00</span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        bodyLoaded();
+        document.getElementById("audio").addEventListener("ended",
+                function() {
+                    playAudio();
+                }, false);
+    </script> 
+    <div class="row-download">
+        <%= image_tag("/assets/Like-32.png", height: "24", width: "24")%>
+        <%= link_to "Like", ""%>
+        <%= image_tag("/assets/download1.png", height: "24", width: "24")%>
+		<%= link_to "Download", ""%>
+	</div>    
+</div>
+
+<div class="title-main">Lyrics</div>
+<div class="row-lyric"><%=@music.lyrics  %></div>    
+<div class="title-main">Related songs</div>
+<%@music.makes.each do |make|%>
+    <%Artist.find(make.artist_id).makes.each do |make1|%>
+        <% if Music.find(make1.music_id).id!=@music.id %>
+            <div class="row-song">
+                <%= image_tag("/assets/music-32.png", height: "16", width: "16")%>
+                <%= link_to Music.find(make1.music_id).name, Music.find(make1.music_id) %>
+            </div>
+            <div class="row-info">
+                <%= image_tag("/assets/singer.png", height: "16", width: "16")%>
+
+                <%Music.find(make1.music_id).makes.each do |make2|%>
+                  <%= Artist.find(make2.artist_id).name%>,
+                <% end%>
+
+                <span><%= image_tag("/assets/Like-32.png", height: "16", width: "16")%>168</span>
+            </div>
+        <%end%>
+    <%end%>
+<%end%>

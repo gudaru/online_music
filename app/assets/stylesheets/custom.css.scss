@@ -27,9 +27,11 @@ span a {font-size:14px!important;color:#cccccc!important}
 //song
 .row-song {padding:3px 5px 0px 6px;font-weight:lighter;font-size:14px;color:#5ea4fc}
 .row-info {padding:0px 5px 3px 25px;font-weight:lighter;font-size:12px;color:#555555;;border-bottom:1px solid #999999}
-.row-songplay {padding:5px 5px 5px 5px;font-weight:bold;font-size:18px;color:#5ea4fc}
-.row-infoplay {padding:5px 5px 5px 40px;font-weight:lighter;font-size:14px;color:#555555;border-bottom:2px solid #5ea4fc}
-
+.row-songplay {padding:0px 5px 0px 0px;font-weight:bold;font-size:16px;color:#5ea4fc}
+.row-infoplay {padding:0px 5px 5px 35px;font-weight:lighter;font-size:12px;color:#555555;border-bottom:2px solid #5ea4fc}
+.row-infoplay1 {padding:0px 5px 5px 35px;font-weight:lighter;font-size:12px;color:#555555;}
+.row-download {text-align:right}
+.row-lyric {padding:10px 10px 10px 10px;font-weight:lighter;font-size:14px}
 
 #error_explanation {
   color: #ff0000;
