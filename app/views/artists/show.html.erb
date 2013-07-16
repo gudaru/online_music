@@ -9,7 +9,7 @@
   <% @artist.makes.each do |make| %>
   	<div class="row-song">
   		<%= image_tag("/assets/music-32.png", height: "16", width: "16")%>
-      	<%= link_to Music.find(make.music_id).name, Music.find(make.music_id) %>
+      	<%= link_to Music.find(make.music_id).name, Music.find(make.music_id) , target: "_self"%>
   	</div>
   	<div class="row-info">
   		<%= image_tag("/assets/singer.png", height: "16", width: "16")%>

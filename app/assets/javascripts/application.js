@@ -37,7 +37,7 @@ var bodyLoaded = function() {
     handControl = document.getElementById("hand_progress");
     if (audio != null) {
         setTimeSong();
-        pauseAudio();
+        playAudio();
 
         playControl.addEventListener("click", function() {
             if (audio.paused) {
@@ -71,6 +71,7 @@ var bodyLoaded = function() {
         }, true);
     }
 };
+
 
 function playAudio() {
     audio.play();

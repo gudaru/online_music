@@ -12,7 +12,24 @@
       
 	  <%= csrf_meta_tags %>
 	  <%= render 'layouts/shim'%>
+
+	  <!-- now playing -->
+	  <script type="text/javascript">
+	  	nowpl_url="#";
+	  	nowhost = window.location.host;
+	  	function nowplayurl(){
+	  		var nowurl= window.location.href;
+	  		var n= nowurl.search("musics");
+	  		if(n!=(-1)&(nowurl.substring(n).length)>7){
+	  			nowpl_url=nowhost.concat(nowurl.substring(n-1));
+	  		}
+	  		window.alert(nowpl_url);
+	  		//return nowpl_url;
+	  	}
+	  </script>
 	</head>
+
+
 	<body>
 		<div data-role="page" id="home">
 			<%= render 'layouts/header'%>

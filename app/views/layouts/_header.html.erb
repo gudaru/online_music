@@ -1,7 +1,9 @@
 <div data-role="header" data-position="fixed">
 	<div class="header-logo">
 		<%= link_to(image_tag("/assets/logo4.png", :alt => "logo",height: '48', width: '100'), root_path) %>
-		<span class="header-text">Muzik</span>
+		<span class="header-text">
+			<a href="javascript:nowplayurl()" target="_self">Muzik</a>
+		</span>
 	</div>
 
 	<% if signed_in? %>
@@ -39,7 +41,7 @@
 				<%= image_tag("/assets/song.png", height: "16", width: "16")%>
 				</span>
 				<span>
-					<%= link_to song.name, song %>
+					<%= link_to song.name, song , target: "_self"%>
 				</span>
 			</li>
 		<%end%>

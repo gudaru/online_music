@@ -3,7 +3,7 @@
   <% @musicsn.each do |musicn| %>
   	<div class="row-song">
   		<%= image_tag("/assets/music-32.png", height: "16", width: "16")%>
-      	<%= link_to musicn.name, musicn %>
+      	<%= link_to musicn.name, musicn , target: "_self"%>
   	</div>
   	<div class="row-info">
   		<%= image_tag("/assets/singer.png", height: "16", width: "16")%>
