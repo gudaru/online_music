@@ -19,7 +19,9 @@ OnlineMusic::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :musics
+  resources :musics do
+    get :download, :on => :collection
+  end
   resources :artists
 
   # root to: 'static_pages#home'
