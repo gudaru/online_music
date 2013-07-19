@@ -6,7 +6,7 @@
 <p><%=@artist.info%></p>
 
 <div class="title-main">Songs:</div>
-  <% @artist.makes.each do |make| %>
+  <% @make.each do |make| %>
   	<div class="row-song">
   		<%= image_tag("/assets/music-32.png", height: "16", width: "16")%>
       	<%= link_to Music.find(make.music_id).name, Music.find(make.music_id) , target: "_self"%>
@@ -21,3 +21,6 @@
   		<span><%= image_tag("/assets/Like-32.png", height: "16", width: "16")%>168</span>
   	</div>
   <% end %>
+  <div class="mpaging">
+        <%=will_paginate @make, :param_name => 'page',:inner_window => 0,:outer_window => 0, style: "font-size:70%;padding:0px"%>  
+  </div>

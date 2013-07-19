@@ -1,10 +1,10 @@
-<% if @user.errors.any? %>
+<% if @music.errors.any? %>
   <div id="error_explanation">
     <div style="color:red">
-      The form contains <%= pluralize(@user.errors.count, "error") %>.
+      The form contains <%= pluralize(@music.errors.count, "error") %>.
     </div>
     <ul style="color:red">
-    <% @user.errors.full_messages.each do |msg| %>
+    <% @music.errors.full_messages.each do |msg| %>
       <li>* <%= msg %></li>
     <% end %>
     </ul>

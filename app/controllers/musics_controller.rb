@@ -5,6 +5,8 @@ class MusicsController < ApplicationController
 
   def show
   	@music = Music.find(params[:id])
+    @make = (Music.find(params[:id])).makes
+    @comment = (Music.find(params[:id])).comments.paginate(page: params[:page], per_page: 5)
   end
 
   def index

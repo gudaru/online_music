@@ -15,7 +15,7 @@
 	<div class="row-infoplay1">
 		<%= link_to(image_tag("/assets/singer.png", :alt => "artist", height: "24", width: "24"), "#", target: "blank") %>
 		 
-		<%@music.makes.each do |make|%>
+		<%@make.each do |make|%>
 	        <%=link_to Artist.find(make.artist_id).name,Artist.find(make.artist_id)%>,
 	    <% end%>
 	    	
@@ -52,7 +52,7 @@
                 function() {
                     playAudio();
                 }, false);
-    </script> 
+    </script>
     <div class="row-download">
         <%= image_tag("/assets/Like-32.png", height: "24", width: "24")%>
         <%= link_to "Like", ""%>
@@ -60,11 +60,31 @@
 		<%= link_to "Download", @music.m_src, :target => "_self"%>
 	</div>    
 </div>
-
+<!-- lyric -->
 <div class="title-main">Lyrics</div>
-<div class="row-lyric"><%=@music.lyrics  %></div>    
+<div class="row-lyric"><%=@music.lyrics  %></div>
+<!-- comment -->
+<div class="title-main">Comments</div>
+<div>
+    <!-- todo -->
+    <%@comment.each do |comment|%>
+        <div class="row-song">
+            <%=gravatar_for_comment User.find(comment.user_id)%>
+            <%= link_to User.find(comment.user_id).name, User.find(comment.user_id)%>
+        </div>
+        <div class="row-info">
+            <%=comment.content%><br>
+            <%=comment.created_at%>
+        </div>
+    <%end%>
+    <div class="mpaging">
+        <%=will_paginate @comment, :param_name => 'page',:inner_window => 0,:outer_window => 0, style: "font-size:70%;padding:0px"%>  
+    </div>
+    
+</div>    
+<!-- related songs -->
 <div class="title-main">Related songs</div>
-<%@music.makes.each do |make|%>
+<%@make.each do |make|%>
     <%Artist.find(make.artist_id).makes.each do |make1|%>
         <% if Music.find(make1.music_id).id!=@music.id %>
             <div class="row-song">

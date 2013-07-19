@@ -5,6 +5,7 @@ namespace :db do
     make_musics
     make_artists
     make_makes
+    make_comments
   end
 end
 
@@ -25,10 +26,10 @@ def make_users
 end
 
 def make_musics
-  37.times do |n|
+  100.times do |n|
     name = Faker::Name.name
-    lyrics = "abc"
-    m_src = "/audios/#{n+1}.mp3"
+    lyrics = Faker::Lorem.sentence(5)
+    m_src = "/audios/#{rand(1..37)}.mp3"
     Music.create!(name: name,
                   lyrics: lyrics,
                   m_src: m_src)
@@ -38,8 +39,7 @@ end
 def make_artists
   18.times do |n|
     name = Faker::Name.name
-    info = "This article is about the Portuguese footballer. For the Brazilian footballer, see Ronaldo. For other people named Ronaldo, see Ronaldo (name) redirects here. For other uses, see CR7 (disambiguation).
-This name uses Portuguese naming customs. The first or maternal family name is dos Santos and the second or paternal family name is Aveiro."
+    info = Faker::Lorem.sentence(5)
     Artist.create!(name: name,
                    info: info)
   end
@@ -47,10 +47,25 @@ end
 
 
 def make_makes
-  37.times do |n|
-    m_id = n+1
+  150.times do |n|
+    if n<100
+      m_id = n+1
+    else
+      m_id = rand (1..20)
+    end
     a_id = rand(1..18)
     Make.create!(music_id: m_id,
                  artist_id: a_id)
+  end
+end
+
+def make_comments
+  500.times do |n|
+    u_id = rand(1..30)
+    m_id = rand(1..37)
+    content = Faker::Lorem.sentence(5)
+    Comment.create(music_id: m_id,
+                   user_id: u_id,
+                   content: content)
   end
 end
