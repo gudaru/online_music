@@ -65,6 +65,16 @@
 <div class="row-lyric"><%=@music.lyrics  %></div>
 <!-- comment -->
 <div class="title-main">Comments</div>
+<!-- post -->
+<%if signed_in?%>
+    <div class="row-info">
+        <%=render 'shared/comments_form'%>
+    </div>
+<%else%>
+    <div class="row-lyric">
+        <%=link_to "Sign in", signin_path%> to comment.
+    </div>
+<%end%>
 <div>
     <!-- todo -->
     <%@comment.each do |comment|%>
@@ -81,7 +91,8 @@
         <%=will_paginate @comment, :param_name => 'page',:inner_window => 0,:outer_window => 0, style: "font-size:70%;padding:0px"%>  
     </div>
     
-</div>    
+</div>
+
 <!-- related songs -->
 <div class="title-main">Related songs</div>
 <%@make.each do |make|%>

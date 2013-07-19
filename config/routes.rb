@@ -1,4 +1,16 @@
 OnlineMusic::Application.routes.draw do
+  # get "comments/new"
+
+  # get "comments/create"
+
+  # get "coments/new"
+
+  # get "coments/create"
+
+  # get "cooments/new"
+
+  # get "cooments/create"
+
   # get "makes/new"
 
   # get "artists/new"
@@ -23,6 +35,7 @@ OnlineMusic::Application.routes.draw do
     get :download, :on => :collection
   end
   resources :artists
+  resources :comments, only: [:create, :destroy]
 
   # root to: 'static_pages#home'
   root to: 'musics#index'
