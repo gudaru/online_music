@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :musics, through: :comments
 
+  has_many :likes
+  has_many :musics, through: :likes
+
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
   

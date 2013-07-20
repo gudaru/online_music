@@ -1,4 +1,8 @@
 OnlineMusic::Application.routes.draw do
+  get "likes/create"
+
+  get "likes/destroy"
+
   # get "comments/new"
 
   # get "comments/create"
@@ -33,6 +37,7 @@ OnlineMusic::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :musics do
     get :download, :on => :collection
+    resources :comments
   end
   resources :artists
   resources :comments, only: [:create, :destroy]

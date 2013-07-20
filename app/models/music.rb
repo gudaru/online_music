@@ -4,6 +4,10 @@ class Music < ActiveRecord::Base
   has_many :artists, through: :makes
   has_many :comments
   has_many :users, through: :comments
+  has_many :likes
+  has_many :users, through: :likes
+
   validates :name, presence: true
   validates :m_src, presence: true
+
 end
