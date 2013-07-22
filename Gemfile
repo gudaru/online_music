@@ -16,9 +16,11 @@ gem 'bootstrap-will_paginate', '0.0.6'
 group :development do
   gem 'mysql2', '0.3.11'
   gem 'annotate', '2.5.0'
+  gem 'taps', '0.3.24'
+  gem 'sqlite3'
 end
 
-gem 'taps', '0.3.24'
+
 gem 'jquery_mobile_rails', '1.3.0'
 
 # Gems used only for assets and not required
